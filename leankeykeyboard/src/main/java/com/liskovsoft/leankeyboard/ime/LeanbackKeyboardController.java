@@ -277,7 +277,7 @@ public class LeanbackKeyboardController implements LeanbackKeyboardContainer.Voi
                 }
             }
         }
-        
+
         if (defaultCode == KeyEvent.KEYCODE_BUTTON_B) {
             defaultCode = KeyEvent.KEYCODE_BACK;
         }
@@ -345,6 +345,9 @@ public class LeanbackKeyboardController implements LeanbackKeyboardContainer.Voi
                 }
 
                 mContainer.onClipboardClick(mInputListener);
+                return;
+            case LeanbackKeyboardView.KEYCODE_ENTER:
+                fakeKeyIndex(0, KeyFocus.TYPE_ACTION);
                 return;
             default:
                 mInputListener.onEntry(InputListener.ENTRY_TYPE_STRING, keyCode, text);
@@ -643,10 +646,10 @@ public class LeanbackKeyboardController implements LeanbackKeyboardContainer.Voi
             view.setClickable(true);
             view.setOnTouchListener(this);
             view.setOnHoverListener(this);
-            Button button = mContainer.getGoButton();
-            button.setOnTouchListener(this);
-            button.setOnHoverListener(this);
-            button.setTag(TAG_GO);
+//            Button button = mContainer.getGoButton();
+//            button.setOnTouchListener(this);
+//            button.setOnHoverListener(this);
+//            button.setTag(TAG_GO);
             return view;
         } else {
             return null;
@@ -660,7 +663,7 @@ public class LeanbackKeyboardController implements LeanbackKeyboardContainer.Voi
             mInputListener.onEntry(InputListener.ENTRY_TYPE_DISMISS, LeanbackKeyboardView.SHIFT_OFF, null);
         }
     }
-    
+
     public boolean onGenericMotionEvent(MotionEvent event) {
         return mSpaceTracker != null && mContext != null && mContext.isInputViewShown() && mSpaceTracker.onGenericMotionEvent(event);
     }

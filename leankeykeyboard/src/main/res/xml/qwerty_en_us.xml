@@ -42,7 +42,8 @@
         <Key android:codes="47"  android:popupKeyboard="@xml/accent_slash" android:keyEdgeFlags="right" android:keyLabel="/" />
     </Row>
     <Row>
-        <Key android:codes="122" android:popupKeyboard="@xml/accent_z" android:keyEdgeFlags="left" android:keyLabel="z" />
+        <Key android:codes="-1"  android:keyEdgeFlags="left"  android:keyLabel="@string/keyboardview_keycode_shift" android:keyIcon="@drawable/ic_ime_shift_off" />
+        <Key android:codes="122" android:popupKeyboard="@xml/accent_z" android:keyLabel="z" />
         <Key android:codes="120" android:popupKeyboard="@xml/shift_x" android:keyLabel="x" />
         <Key android:codes="99"  android:popupKeyboard="@xml/accent_c" android:keyLabel="c" />
         <Key android:codes="118" android:popupKeyboard="@xml/shift_v" android:keyLabel="v" />
@@ -51,16 +52,14 @@
         <Key android:codes="109" android:popupKeyboard="@xml/shift_m" android:keyLabel="m" />
         <Key android:codes="44"  android:keyLabel="," />
         <Key android:codes="46"  android:keyLabel="." />
-        <Key android:codes="45"  android:keyLabel="-" />
-        <Key android:codes="-10" android:keyEdgeFlags="right" android:keyLabel="@string/keyboardview_keycode_clipboard" android:keyIcon="@drawable/ic_ime_clipboard" />
+        <Key android:codes="45"  android:keyEdgeFlags="right" android:keyLabel="-" />
     </Row>
     <Row android:rowEdgeFlags="bottom">
         <Key android:codes="-2" android:keyEdgeFlags="left" android:keyLabel="@string/keyboardview_keycode_mode_change" android:keyIcon="@drawable/ic_ime_symbols" />
-        <Key android:codes="-1" android:keyLabel="@string/keyboardview_keycode_shift" android:keyIcon="@drawable/ic_ime_shift_off" />
-        <Key android:codes="-9" android:keyLabel="@string/keyboardview_keycode_lang" android:keyIcon="@drawable/ic_ime_world" />
-        <Key android:codes="32" android:keyLabel="@string/keyboardview_keycode_space" android:keyIcon="@drawable/ic_ime_space" android:keyWidth="@dimen/space_key_width" />
-        <Key android:codes="-7" android:keyLabel="@string/keyboardview_keycode_voice" android:keyIcon="@drawable/ic_ime_voice" android:popupKeyboard="@xml/accent_voice" />
         <Key android:codes="-3" android:keyLabel="@string/keyboardview_keycode_left" android:keyIcon="@drawable/ic_ime_left_arrow" />
-        <Key android:codes="-4" android:keyEdgeFlags="right" android:keyLabel="@string/keyboardview_keycode_right" android:keyIcon="@drawable/ic_ime_right_arrow" />
+        <Key android:codes="-4" android:keyLabel="@string/keyboardview_keycode_right" android:keyIcon="@drawable/ic_ime_right_arrow" />
+        <Key android:codes="32" android:keyLabel="@string/keyboardview_keycode_space" android:keyIcon="@drawable/ic_ime_space" android:keyWidth="@dimen/space_key_width" />
+        <Key android:codes="-9" android:keyLabel="@string/keyboardview_keycode_lang" android:keyIcon="@drawable/ic_ime_world" />
+        <Key android:codes="10" android:keyEdgeFlags="right" android:keyLabel="@string/label_done_key" android:keyIcon="@drawable/ic_ime_enter" android:keyWidth="@dimen/enter_key_width" />
     </Row>
 </Keyboard>

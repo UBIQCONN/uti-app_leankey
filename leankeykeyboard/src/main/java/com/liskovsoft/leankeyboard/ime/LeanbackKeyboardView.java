@@ -48,6 +48,7 @@ public class LeanbackKeyboardView extends FrameLayout {
     public static final int KEYCODE_VOICE = -7;
     public static final int KEYCODE_LANG_TOGGLE = -9;
     public static final int KEYCODE_CLIPBOARD = -10;
+    public static final int KEYCODE_ENTER = 10;
     public static final int NOT_A_KEY = -1;
     public static final int SHIFT_LOCKED = 2;
     public static final int SHIFT_OFF = 0;
@@ -342,6 +343,16 @@ public class LeanbackKeyboardView extends FrameLayout {
 
     public Key getKey(int index) {
         return mKeys != null && mKeys.length != 0 && index >= 0 && index <= mKeys.length ? mKeys[index].key : null;
+    }
+
+    public int getEnterKeyIdx() {
+        if (mKeys != null && mKeys.length > 0) {
+            for (int i = 0; i < mKeys.length; i++) {
+                if (KEYCODE_ENTER == mKeys[i].key.codes[0])
+                    return i;
+            }
+        }
+        return -1;
     }
 
     public Keyboard getKeyboard() {

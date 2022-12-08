@@ -95,6 +95,7 @@ public class LeanbackKeyboardContainer {
     private KeyFocus mDownKeyInfo = new KeyFocus();
     private CharSequence mEnterKeyText;
     private int mEnterKeyTextResId;
+    private Key mEnterKey;
     private boolean mEscapeNorthEnabled;
     private Keyboard mInitialMainKeyboard;
     private KeyboardManager mKeyboardManager;
@@ -432,23 +433,36 @@ public class LeanbackKeyboardContainer {
         }
 
         mEnterKeyText = info.actionLabel;
+        int enterKeyIdx = mMainKeyboardView.getEnterKeyIdx();
+        mEnterKey = mMainKeyboardView.getKey(enterKeyIdx);
         if (TextUtils.isEmpty(mEnterKeyText)) {
             switch (LeanbackUtils.getImeAction(info)) {
                 case EditorInfo.IME_ACTION_GO:
                     mEnterKeyTextResId = R.string.label_go_key;
-                    return;
+                    mEnterKey.icon = null;
+                    mEnterKey.text = mEnterKey.label = res.getText(R.string.label_go_key);
+                    break;
                 case EditorInfo.IME_ACTION_SEARCH:
                     mEnterKeyTextResId = R.string.label_search_key;
-                    return;
+                    mEnterKey.icon = res.getDrawable(R.drawable.ic_ime_search);
+                    mEnterKey.label = res.getText(R.string.label_search_key);
+                    break;
                 case EditorInfo.IME_ACTION_SEND:
                     mEnterKeyTextResId = R.string.label_send_key;
-                    return;
+                    mEnterKey.icon = null;
+                    mEnterKey.text = mEnterKey.label = res.getText(R.string.label_send_key);
+                    break;
                 case EditorInfo.IME_ACTION_NEXT:
                     mEnterKeyTextResId = R.string.label_next_key;
-                    return;
+                    mEnterKey.icon = null;
+                    mEnterKey.text = mEnterKey.label = res.getText(R.string.label_next_key);
+                    break;
                 default:
                     mEnterKeyTextResId = R.string.label_done_key;
+                    mEnterKey.icon = res.getDrawable(R.drawable.ic_ime_enter);
+                    break;
             }
+            mMainKeyboardView.invalidateKey(enterKeyIdx);
         }
 
     }
@@ -670,8 +684,8 @@ public class LeanbackKeyboardContainer {
         return keyCode;
     }
 
-    public Button getGoButton() {
-        return mActionButtonView;
+    public Key getEnterKey() {
+        return mEnterKey;
     }
 
     public Key getKey(int type, int index) {
