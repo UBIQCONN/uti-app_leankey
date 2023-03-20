@@ -347,6 +347,7 @@ public class LeanbackKeyboardController implements LeanbackKeyboardContainer.Voi
                 mContainer.onClipboardClick(mInputListener);
                 return;
             case LeanbackKeyboardView.KEYCODE_ENTER:
+                mContainer.saveFocusIndex();
                 fakeKeyIndex(0, KeyFocus.TYPE_ACTION);
                 return;
             default:

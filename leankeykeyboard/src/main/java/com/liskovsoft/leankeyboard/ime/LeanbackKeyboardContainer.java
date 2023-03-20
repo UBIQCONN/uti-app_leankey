@@ -329,6 +329,9 @@ public class LeanbackKeyboardContainer {
         setTouchState(TOUCH_STATE_NO_TOUCH);
         setKbFocus(mTempKeyInfo, true, true);
     }
+    public void saveFocusIndex() {
+        moveFocusToIndex(getCurrFocus().index, KeyFocus.TYPE_MAIN);
+    }
 
     private void offsetRect(Rect rect, View view) {
         rect.left = 0;
@@ -1045,7 +1048,8 @@ public class LeanbackKeyboardContainer {
         offsetRect(mRect, mMainKeyboardView);
         mX = (float) ((double) mRect.left + (double) mRect.width() * 0.45D);
         mY = (float) ((double) mRect.top + (double) mRect.height() * 0.375D);
-        getBestFocus(mX, mY, mTempKeyInfo);
+        if (mTempKeyInfo.index <= 0)
+            getBestFocus(mX, mY, mTempKeyInfo);
         setKbFocus(mTempKeyInfo, true, false);
         setTouchStateInternal(0);
         mSelectorAnimator.reverse();
@@ -1254,7 +1258,8 @@ public class LeanbackKeyboardContainer {
     }
 
     public void onLangKeyClick() {
-        switchToNextKeyboard();
+
+        //switchToNextKeyboard();
     }
 
     public void onClipboardClick(InputListener listener) {
