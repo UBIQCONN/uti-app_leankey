@@ -16,13 +16,13 @@
     <dimen name="function_key_mode_change_font_size">16.0sp</dimen>
     <dimen name="resize_move_distance">12.0dip</dimen>
     <!-- Enter key values -->
-    <dimen name="enter_key_width">40.0dip</dimen>
+    <dimen name="enter_key_width">32.0dip</dimen>
     <dimen name="enter_key_height">32.0dip</dimen>
     <dimen name="enter_key_font_size">18.0sp</dimen>
     <dimen name="enter_key_padding_horizontal">16.0dip</dimen>
     <!-- Keyboard other -->
     <dimen name="keyboard_top_spacing">6.0dip</dimen>
-    <dimen name="keyboard_bottom_spacing">28.0dip</dimen>
+    <dimen name="keyboard_bottom_spacing">10.0dip</dimen>
     <!-- Voice input -->
     <dimen name="action_button_size">64.0dip</dimen>
     <dimen name="recognizer_size">96.0dip</dimen>

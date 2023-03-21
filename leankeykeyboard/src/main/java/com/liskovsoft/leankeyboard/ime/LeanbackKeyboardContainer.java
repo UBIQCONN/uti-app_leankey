@@ -95,7 +95,7 @@ public class LeanbackKeyboardContainer {
     private KeyFocus mDownKeyInfo = new KeyFocus();
     private CharSequence mEnterKeyText;
     private int mEnterKeyTextResId;
-    private Key mEnterKey;
+    private Key mEnterKey; // Aress add
     private boolean mEscapeNorthEnabled;
     private Keyboard mInitialMainKeyboard;
     private KeyboardManager mKeyboardManager;
@@ -435,6 +435,7 @@ public class LeanbackKeyboardContainer {
             }
         }
 
+        // Aress modify
         mEnterKeyText = info.actionLabel;
         int enterKeyIdx = mMainKeyboardView.getEnterKeyIdx();
         mEnterKey = mMainKeyboardView.getKey(enterKeyIdx);
@@ -1258,8 +1259,7 @@ public class LeanbackKeyboardContainer {
     }
 
     public void onLangKeyClick() {
-
-        //switchToNextKeyboard();
+        switchToNextKeyboard();
     }
 
     public void onClipboardClick(InputListener listener) {

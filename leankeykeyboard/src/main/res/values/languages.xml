@@ -2,35 +2,39 @@
 <resources>
     <string-array name="additional_languages">
         <item>English|en_us</item>
-        <item>English (AZERTY)|en_us|azerty</item>
-        <item>Русский|ru</item>
-        <item>Українська|uk</item>
-        <item>Deutsch|de</item>
-        <item>Български|bg</item>
-        <item>Nederlands|nl</item>
-        <item>Français|fr</item>
-        <item>Français (AZERTY)|fr|azerty</item>
-        <!-- Greek -->
-        <item>Ελληνικά|el</item>
-        <!-- Icelandic -->
-        <item>Íslenska|is</item>
-        <item>Italiano|it</item>
-        <!-- Swedish -->
-        <item>Svenska|sv</item>
-        <item>Español|es_us</item>
-        <!-- Romanian -->
-        <item>Română|ro</item>
+<!--        <item>English (AZERTY)|en_us|azerty</item>-->
         <!-- Arabic -->
         <item>Arabic|ar</item>
+        <!-- German -->
+        <item>Deutsch|de</item>
+        <!-- French -->
+        <item>Français|fr</item>
+        <!-- Russian -->
+        <item>Русский|ru</item>
+        <!-- Spanish -->
+        <item>Español|es_us</item>
+<!--        <item>Українська|uk</item>-->
+<!--        <item>Български|bg</item>-->
+<!--        <item>Nederlands|nl</item>-->
+<!--        <item>Français (AZERTY)|fr|azerty</item>-->
+        <!-- Greek -->
+<!--        <item>Ελληνικά|el</item>-->
+        <!-- Icelandic -->
+<!--        <item>Íslenska|is</item>-->
+<!--        <item>Italiano|it</item>-->
+        <!-- Swedish -->
+<!--        <item>Svenska|sv</item>-->
+        <!-- Romanian -->
+<!--        <item>Română|ro</item>-->
         <!-- Hebrew -->
-        <item>Hebrew|he</item>
-        <item>Persian|fa</item>
+<!--        <item>Hebrew|he</item>-->
+<!--        <item>Persian|fa</item>-->
         <!-- Thai -->
-        <item>ภาษาไทย|th</item>
+<!--        <item>ภาษาไทย|th</item>-->
         <!-- Turkish -->
-        <item>Türkçe (Q board)|tr</item>
-        <item>Türkçe|tr|azerty</item>
+<!--        <item>Türkçe (Q board)|tr</item>-->
+<!--        <item>Türkçe|tr|azerty</item>-->
         <!-- Korean -->
-        <item>한국어|ko_kr</item>
+<!--        <item>한국어|ko_kr</item>-->
     </string-array>
 </resources>

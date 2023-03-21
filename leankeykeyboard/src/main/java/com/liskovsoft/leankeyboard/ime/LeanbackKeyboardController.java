@@ -346,6 +346,8 @@ public class LeanbackKeyboardController implements LeanbackKeyboardContainer.Voi
 
                 mContainer.onClipboardClick(mInputListener);
                 return;
+            //Aress modify
+            // add enter action
             case LeanbackKeyboardView.KEYCODE_ENTER:
                 mContainer.saveFocusIndex();
                 fakeKeyIndex(0, KeyFocus.TYPE_ACTION);
@@ -647,6 +649,7 @@ public class LeanbackKeyboardController implements LeanbackKeyboardContainer.Voi
             view.setClickable(true);
             view.setOnTouchListener(this);
             view.setOnHoverListener(this);
+            // Aress modify
 //            Button button = mContainer.getGoButton();
 //            button.setOnTouchListener(this);
 //            button.setOnHoverListener(this);
