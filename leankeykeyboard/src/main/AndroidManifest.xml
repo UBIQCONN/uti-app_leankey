@@ -59,7 +59,6 @@
             android:name="com.liskovsoft.leankeyboard.addons.voice.RecognizerIntentActivity"
             android:theme="@style/Theme.AppCompat"
             android:launchMode="singleTop"/>
-
         <activity
             android:name="com.liskovsoft.leankeyboard.activity.settings.KbActivationActivity"
             android:launchMode="singleTop">

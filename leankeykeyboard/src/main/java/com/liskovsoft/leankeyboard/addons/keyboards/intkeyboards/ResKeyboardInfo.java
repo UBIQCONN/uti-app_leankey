@@ -47,7 +47,7 @@ public class ResKeyboardInfo implements KeyboardInfo {
 
     private static void syncWithPrefs(Context ctx, KeyboardInfo info) {
         final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ctx);
-        final boolean kbdEnabled = sharedPreferences.getBoolean(info.toString(), false);
+        final boolean kbdEnabled = sharedPreferences.getBoolean(info.toString(), true);
         info.setEnabled(kbdEnabled);
     }
 
