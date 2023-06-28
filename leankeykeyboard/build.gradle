@@ -33,7 +33,7 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
             def project = "LeanKeyKeyboardPro"
-            def buildType = variant.variantData.variantConfiguration.buildType.name.take(1)
+            def buildType = variant.buildType.name
             def version = variant.versionName
             def flavor = variant.productFlavors[-1].name
 
@@ -61,6 +61,7 @@ android {
             applicationId "com.liskovsoft.leankeyboard"
         }
     }
+    namespace "com.liskovsoft.leankeykeyboard"
 }
 
 dependencies {
