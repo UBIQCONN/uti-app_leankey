@@ -76,3 +76,18 @@ dependencies {
     implementation project.properties.designXVersion
     implementation project.properties.voiceOverlayVersion
 }
+
+// Define a custom task to copy the APK
+task copyApk(type: Copy) {
+    def apkDir = file("${project.buildDir}/outputs/apk/origin/release")
+    from apkDir
+    include 'LeanKeyKeyboardPro_v6.1.19_origin_release.apk'
+    into project.rootDir
+}
+task delApk(type: Delete) {
+    def apkFile = file("${project.rootDir}/LeanKeyKeyboardPro_v6.1.19_origin_release.apk") // Replace with the actual APK filename if needed
+    delete apkFile
+}
+// Make the copyApk task depend on the assembleRelease task
+tasks.getByName("assemble").dependsOn(copyApk)
+tasks.getByName("clean").dependsOn(delApk)
