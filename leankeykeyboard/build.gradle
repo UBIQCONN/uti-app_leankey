@@ -20,9 +20,34 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+    signingConfigs {
+        sign_aosp {
+            keyAlias 'aosp'
+            keyPassword 'ubiqconn'
+            storeFile file('../signkey/aosp_platform.jks')
+            storePassword 'ubiqconn'
+        }
+        sign_nxp_evk {
+            keyAlias 'nxp_evk'
+            keyPassword 'ubiqconn'
+            storeFile file('../signkey/nxp_evk.jks')
+            storePassword 'ubiqconn'
+        }
+        sign_ubiqconn {
+            keyAlias 'ubiqconn'
+            keyPassword 'ubiqconn'
+            storeFile file('../signkey/ubiqconn_platform.jks')
+            storePassword 'ubiqconn'
+        }
+    }
     buildTypes {
+        debug {
+            signingConfig signingConfigs.sign_nxp_evk
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             // https://medium.com/@angelhiadefiesta/how-to-obfuscate-in-android-with-proguard-acab47701577
+            signingConfig signingConfigs.sign_nxp_evk
             minifyEnabled true // enable obfuscation
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

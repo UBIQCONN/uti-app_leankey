@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:sharedUserId="android.uid.system">
 
     <!-- Use older sdk -->
     <uses-sdk tools:overrideLibrary="
             android.support.v17.leanback,
             androidx.leanback,
-            com.algolia.instantsearch.voice"/>
+            com.algolia.instantsearch.voice" />
 
     <uses-feature
         android:name="android.software.leanback"
-        android:required="false"/>
+        android:required="false" />
     <uses-feature
         android:name="android.hardware.touchscreen"
-        android:required="false"/>
+        android:required="false" />
     <uses-feature
         android:name="android.hardware.microphone"
-        android:required="false"/>
+        android:required="false" />
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
-    <uses-permission android:name="com.amazon.tv.ime.permission.KEYBOARD_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="com.amazon.tv.ime.permission.KEYBOARD_STATE" />
     <!-- Google Play Store fix -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:banner="@mipmap/ic_banner_main"
@@ -35,49 +36,46 @@
             android:name="com.liskovsoft.leankeyboard.activity.settings.KbSettingsActivity2"
             android:launchMode="singleTop">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.liskovsoft.leankeyboard.activity.settings.KbSettingsActivity"
-            android:launchMode="singleTop">
-        </activity>
+            android:launchMode="singleTop"></activity>
         <activity
             android:name="com.liskovsoft.leankeyboard.activity.settings.KbLayoutActivity"
-            android:launchMode="singleTop">
-        </activity>
+            android:launchMode="singleTop"></activity>
         <activity
             android:name="com.liskovsoft.leankeyboard.activity.PermissionsActivity"
-            android:launchMode="singleTop">
-        </activity>
+            android:launchMode="singleTop"></activity>
         <activity
             android:name="com.liskovsoft.leankeyboard.addons.voice.RecognizerIntentActivity"
-            android:theme="@style/Theme.AppCompat"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name="com.liskovsoft.leankeyboard.activity.settings.KbActivationActivity"
             android:launchMode="singleTop">
             <meta-data
                 android:name="package"
-                android:value="com.android.settings"/>
+                android:value="com.android.settings" />
             <meta-data
                 android:name="class"
-                android:value="com.android.settings.Settings$LanguageAndInputSettingsActivity"/>
+                android:value="com.android.settings.Settings$LanguageAndInputSettingsActivity" />
             <!-- "Languages & input" on old api -->
             <meta-data
                 android:name="package_alt"
-                android:value="com.android.settings"/>
+                android:value="com.android.settings" />
             <meta-data
                 android:name="class_alt"
-                android:value="com.android.settings.Settings$InputMethodAndLanguageSettingsActivity"/>
+                android:value="com.android.settings.Settings$InputMethodAndLanguageSettingsActivity" />
             <!-- Last try (if above not found) -->
             <meta-data
                 android:name="intent"
-                android:value="android.settings.INPUT_METHOD_SETTINGS"/>
+                android:value="android.settings.INPUT_METHOD_SETTINGS" />
         </activity>
 
         <service
@@ -85,12 +83,12 @@
             android:label="@string/ime_service_name"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
-                <action android:name="android.view.InputMethod"/>
+                <action android:name="android.view.InputMethod" />
             </intent-filter>
 
             <meta-data
                 android:name="android.view.im"
-                android:resource="@xml/method"/>
+                android:resource="@xml/method" />
         </service>
 
         <receiver
@@ -98,23 +96,23 @@
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED"/>
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
 
-                <data android:scheme="package"/>
+                <data android:scheme="package" />
             </intent-filter>
         </receiver>
 
         <receiver
             android:name="com.liskovsoft.leankeyboard.receiver.TextUpdateReceiver"
-            android:permission="com.amazon.tv.ime.permission.KEYBOARD_STATE"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:permission="com.amazon.tv.ime.permission.KEYBOARD_STATE">
             <intent-filter>
-                <action android:name="com.amazon.tv.ime.action.CLIENT_TEXT"/>
-                <action android:name="com.amazon.tv.ime.action.IME_TEXT"/>
-                <action android:name="com.amazon.tv.ime.action.KEYBOARD_STATE"/>
+                <action android:name="com.amazon.tv.ime.action.CLIENT_TEXT" />
+                <action android:name="com.amazon.tv.ime.action.IME_TEXT" />
+                <action android:name="com.amazon.tv.ime.action.KEYBOARD_STATE" />
             </intent-filter>
         </receiver>
     </application>
