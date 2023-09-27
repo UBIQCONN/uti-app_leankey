@@ -913,8 +913,10 @@ public class LeanbackKeyboardContainer {
             setTouchState(LeanbackKeyboardContainer.TOUCH_STATE_NO_TOUCH);
             return true;
         } else if (keyCode == LeanbackKeyboardView.KEYCODE_LANG_TOGGLE) {
-            Helpers.startActivity(mContext, KbSettingsActivity.class);
-            mContext.onHideIme();
+            // 2023-09-27
+            // Gino fix
+//            Helpers.startActivity(mContext, KbSettingsActivity.class);
+//            mContext.onHideIme();
             return true;
         } else {
             if (mCurrKeyInfo.type == KeyFocus.TYPE_MAIN) {

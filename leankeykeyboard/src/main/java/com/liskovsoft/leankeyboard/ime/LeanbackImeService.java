@@ -7,6 +7,7 @@ import android.inputmethodservice.InputMethodService;
 import android.os.Build.VERSION;
 import android.os.Handler;
 import android.os.Message;
+import android.os.UserHandle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.InputDevice;
@@ -278,7 +279,8 @@ public class LeanbackImeService extends KeyMapperImeService {
     @Override
     public void onFinishInputView(boolean finishingInput) {
         super.onFinishInputView(finishingInput);
-        sendBroadcast(new Intent(IME_CLOSE));
+        // TODO: 2023/9/27 disable sendBroadcast
+//        sendBroadcast(new Intent(IME_CLOSE));
         mSuggestionsFactory.clearSuggestions();
 
         // NOTE: Trying to fix kbd without UI bug (telegram)
@@ -368,7 +370,8 @@ public class LeanbackImeService extends KeyMapperImeService {
         super.onStartInputView(info, restarting);
 
         mKeyboardController.onStartInputView();
-        sendBroadcast(new Intent(IME_OPEN));
+        // TODO: 2023/9/27 disable sendBroadcast
+//        sendBroadcast(new Intent(IME_OPEN));
         if (mKeyboardController.areSuggestionsEnabled()) {
             mSuggestionsFactory.createSuggestions();
             mKeyboardController.updateSuggestions(mSuggestionsFactory.getSuggestions());
