@@ -31,6 +31,9 @@ public class PermissionsActivity extends FragmentActivity {
         checkPermissions();
     }
 
+    /**
+     * checkPermissions
+     */
     private void checkPermissions() {
         if (!PermissionHelpers.hasMicPermissions(this)) {
             PermissionHelpers.verifyMicPermissions(this);
