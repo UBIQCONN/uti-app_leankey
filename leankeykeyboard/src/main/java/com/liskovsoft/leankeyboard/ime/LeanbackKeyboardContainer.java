@@ -906,11 +906,12 @@ public class LeanbackKeyboardContainer {
             setTouchState(LeanbackKeyboardContainer.TOUCH_STATE_NO_TOUCH);
             return true;
         } else if (keyCode == LeanbackKeyboardView.ASCII_SPACE) {
-            LeanbackUtils.showKeyboardPicker(mContext);
+            // 2024-01-23 Gino modify
+//            LeanbackUtils.showKeyboardPicker(mContext);
             // Keyboard may stuck on screen. Fixing it...
-            mContext.stopSelf();
+//            mContext.stopSelf();
             // Revert button touch states to normal
-            setTouchState(LeanbackKeyboardContainer.TOUCH_STATE_NO_TOUCH);
+//            setTouchState(LeanbackKeyboardContainer.TOUCH_STATE_NO_TOUCH);
             return true;
         } else if (keyCode == LeanbackKeyboardView.KEYCODE_LANG_TOGGLE) {
             // 2023-09-27
@@ -920,7 +921,9 @@ public class LeanbackKeyboardContainer {
             return true;
         } else {
             if (mCurrKeyInfo.type == KeyFocus.TYPE_MAIN) {
-                mMainKeyboardView.onKeyLongPress();
+                // 2024-01-23 Gino modify
+                // some key long press will crash
+//                mMainKeyboardView.onKeyLongPress();
                 if (mMainKeyboardView.isMiniKeyboardOnScreen()) {
                     mMiniKbKeyIndex = mCurrKeyInfo.index;
                     moveFocusToIndex(mMainKeyboardView.getBaseMiniKbIndex(), KeyFocus.TYPE_MAIN);

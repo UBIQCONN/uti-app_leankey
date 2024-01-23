@@ -4,8 +4,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.inputmethodservice.InputMethodService;
 import android.view.KeyEvent;
+import android.view.Window;
 import android.view.inputmethod.InputConnection;
 import com.liskovsoft.leankeykeyboard.BuildConfig;
 
@@ -97,4 +99,5 @@ public class KeyMapperImeService extends InputMethodService {
 
         unregisterReceiver(mBroadcastReceiver);
     }
+
 }

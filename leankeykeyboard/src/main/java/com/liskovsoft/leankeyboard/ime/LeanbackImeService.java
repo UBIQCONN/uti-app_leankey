@@ -18,6 +18,7 @@ import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import androidx.core.text.BidiFormatter;
+
 import com.liskovsoft.leankeyboard.ime.LeanbackKeyboardController.InputListener;
 import com.liskovsoft.leankeyboard.utils.LeanKeyPreferences;
 
@@ -253,6 +254,7 @@ public class LeanbackImeService extends KeyMapperImeService {
 
     }
 
+
     @Override
     public boolean onEvaluateFullscreenMode() {
         return false; // don't change it (true shows edit dialog above kbd)
@@ -364,6 +366,7 @@ public class LeanbackImeService extends KeyMapperImeService {
         mSuggestionsFactory.onStartInput(info);
         mKeyboardController.onStartInput(info);
     }
+
 
     @Override
     public void onStartInputView(EditorInfo info, boolean restarting) {

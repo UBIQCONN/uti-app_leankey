@@ -31,7 +31,6 @@
         android:icon="@mipmap/ic_launcher_main"
         android:label="@string/ime_name"
         android:theme="@style/Theme.Leanback">
-
         <activity
             android:name="com.liskovsoft.leankeyboard.activity.settings.KbSettingsActivity2"
             android:launchMode="singleTop">
