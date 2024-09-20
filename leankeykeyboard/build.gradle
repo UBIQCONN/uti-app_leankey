@@ -81,12 +81,12 @@ android {
     }
     buildTypes {
         debug {
-            signingConfig signingConfigs.sign_nxp_evk
+            signingConfig signingConfigs.sign_ubiqconn
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
             // https://medium.com/@angelhiadefiesta/how-to-obfuscate-in-android-with-proguard-acab47701577
-            signingConfig signingConfigs.sign_nxp_evk
+            signingConfig signingConfigs.sign_ubiqconn
             minifyEnabled true // enable obfuscation
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
